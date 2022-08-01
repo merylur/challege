@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-01T16:54:17.844Z",
+    "end": "2022-08-01T16:54:19.661Z",
+    "duration": 1817,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "335ee27b-218b-4425-8252-e046445b0048",
+      "title": "",
+      "fullFile": "cypress\\e2e\\serviceTest\\servicio.cy.js",
+      "file": "cypress\\e2e\\serviceTest\\servicio.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8aaa5c98-3052-47ef-bef0-be1a06d0f8c0",
+          "title": "Service test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add new pets",
+              "fullTitle": "Service test Add new pets",
+              "timedOut": null,
+              "duration": 1272,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://petstore.swagger.io/v2/pet',\n  body: {\n    \"id\": 7,\n    \"category\": {\n      \"id\": 0,\n      \"name\": \"NewPet\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\"string\"],\n    \"tags\": [{\n      \"id\": 0,\n      \"name\": \"string\"\n    }],\n    \"status\": \"available\"\n  }\n}).then(response => {\n  cy.log(response.body);\n  expect(response.status).to.eq(200);\n  cy.writeFile('cypress/fixtures/backend/pets.json', response.body); // utils.verifyScheme(schemeJson, response.body, 'cypress/fixtures/backend/pets.json');\n});",
+              "err": {},
+              "uuid": "7ad35255-5a1d-4c97-b1f5-446d0bd209f2",
+              "parentUUID": "8aaa5c98-3052-47ef-bef0-be1a06d0f8c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get pets by id",
+              "fullTitle": "Service test Get pets by id",
+              "timedOut": null,
+              "duration": 261,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let file_name = 'cypress/fixtures/backend/listpets.json';\ncy.request({\n  method: 'GET',\n  url: 'https://petstore.swagger.io/v2/pet/7'\n}).then(response => {\n  expect(response.status).to.eq(200);\n  cy.log(response.body);\n  cy.writeFile('cypress/fixtures/backend/listpets.json', response.body); // utils.verifyScheme(schemeJson, response.body, file_name);\n});",
+              "err": {},
+              "uuid": "6a599ff3-2491-45be-a55f-fc780a8f6530",
+              "parentUUID": "8aaa5c98-3052-47ef-bef0-be1a06d0f8c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "edit pets",
+              "fullTitle": "Service test edit pets",
+              "timedOut": null,
+              "duration": 239,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: 'https://petstore.swagger.io/v2/pet',\n  body: {\n    \"id\": 7,\n    \"category\": {\n      \"id\": 0,\n      \"name\": \"Other name\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\"string\"],\n    \"tags\": [{\n      \"id\": 0,\n      \"name\": \"string\"\n    }],\n    \"status\": \"available\"\n  }\n}).then(response => {\n  cy.log(response.body);\n  expect(response.status).to.eq(200);\n  cy.writeFile('cypress/fixtures/backend/pets.json', response.body); // utils.verifyScheme(schemeJson, response.body, 'cypress/fixtures/backend/pets.json');\n});",
+              "err": {},
+              "uuid": "fb7b44ca-73ac-462f-a595-b227dc03c91e",
+              "parentUUID": "8aaa5c98-3052-47ef-bef0-be1a06d0f8c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7ad35255-5a1d-4c97-b1f5-446d0bd209f2",
+            "6a599ff3-2491-45be-a55f-fc780a8f6530",
+            "fb7b44ca-73ac-462f-a595-b227dc03c91e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1772,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "'cypress/results'",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

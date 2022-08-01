@@ -5,7 +5,7 @@ describe('Sign up: web', () => {
     cy.visit(url);
   });
   it("Logout", () => {
-    cy.get('#login32').click();
+    cy.get('#login2').click();
     cy.wait(500);
     cy.get("#loginusername").type("Lourdes");
     cy.wait(500);

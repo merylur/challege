@@ -15,11 +15,9 @@ describe('Sign up: web', () => {
     cy.get("a").contains('Laptops').click();
     cy.wait(1000);
     cy.get(':nth-child(1) > .card > .card-block > .card-title > .hrefch').click();
-    //cy.wait(500);
+    cy.wait(500);
     cy.get('.col-sm-12 > .btn').click();
-    //cy.wait(500);
+    cy.wait(500);
     cy.get('#cartur').click();
-    //cy.wait(300);
   })
-
 })

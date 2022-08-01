@@ -13,6 +13,5 @@ describe('Sign up: web', () => {
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
     cy.wait(1000);
   })
-
 })
 

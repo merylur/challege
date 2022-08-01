@@ -24,3 +24,6 @@ To make sure that this generated file is OK:
 2) In the left put the file generated
 3) In the right put the response of the service
 4) Make sure that the message: "No errors found. JSON validates against the schema" is displayed.
+
+## To Run Reports  
+``` npm run test:report ```
